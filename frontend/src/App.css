@@ -23,6 +23,109 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Navbar css */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  font-family: Quicksand;
+  background-color: #74477e;
+}
+
+/* header {
+  width: 100%;
+  height: 100vh;
+  background: url(./static/3.jpg) no-repeat;
+  background-size: cover;
+} */
+
+header {
+  width: 100%;
+}
+
+.logo {
+  position: fixed;
+  float: left;
+  margin: 16px 36px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  background: #000;
+  overflow: hidden;
+  color: #fff;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  transition: 1s;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+/* Ether */
+.ether {
+  text-align: center;
+}
+
+.etherCard {
+  width: 360px;
+  padding-right: 60px;
+  padding-left: 60px;
+  background-color: #fff;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/* Maps */
+
+#mapid {
+  height: 200px;
+}
+
+.leaflet-container {
+  height: 400px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.carousel {
+  background-repeat: no-repeat;
+  background-size: cover;
 }

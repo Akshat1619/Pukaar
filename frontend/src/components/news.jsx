@@ -3,57 +3,37 @@ import _ from "lodash";
 import Message from "./message";
 import "../App.css";
 import fire from "./fire";
+import trim from "trim";
 
 class News extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      messages: [],
-      value3: ""
+      searchTerm: ""
     };
     this.db = fire;
-    let app = this.db.database().ref("scraper");
-    app.on("value", snapshot => {
-      this.getData(snapshot.val());
-    });
   }
 
   handleChange3 = event => {
-    this.setState({ value3: event.target.value });
+    this.setState({ searchTerm: event.target.value });
+    console.log(this.searchTerm);
   };
 
-  getData(values) {
-    let messagesVal = values;
-    let messages = _(messagesVal)
-      .keys()
-      .map(messageKey => {
-        let cloned = _.clone(messagesVal[messageKey]);
-        cloned.key = messageKey;
-        return cloned;
-      })
-      .value();
-    this.setState({
-      messages: messages
-    });
-  }
-
-  send_scraper = e => {
-    fetch("http://127.0.0.1:8000/search/", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        search: this.state.value3
-      })
-    }).catch(error => {
-      console.error(error);
-    });
+  onKeyup = e => {
+    if (e.keyCode === 13 && trim(e.target.value) !== "") {
+      e.preventDefault();
+      let dbCon = this.db.database().ref("messages");
+      dbCon.push({
+        message: trim(e.target.value)
+      });
+      this.setState({
+        searchTerm: ""
+      });
+    }
   };
 
   render() {
-    let messageNodes = this.state.messages.map(message => {
+    let messageNodes = this.props.chat.map(message => {
       return (
         <div
           style={{
@@ -81,23 +61,20 @@ class News extends Component {
 
         <h1>Search the trending news around you in real-time</h1>
         <br />
-        <form onSubmit={this.send_scraper}>
-          <input
-            style={{ padding: 5, marginRight: 5 }}
+        <form>
+          <textarea
+            style={{ padding: 5, marginRight: 5, resize: "none" }}
+            placeholder="Search the topic you want news about"
+            cols="30"
             type="text"
-            value={this.state.value3}
+            value={this.state.searchTerm}
             onChange={this.handleChange3}
+            onKeyUp={this.onKeyup}
           />
-
-          <button
-            style={{ padding: 8, fontWeight: "bold" }}
-            type="submit"
-            value="Submit"
-          >
-            Submit
-          </button>
         </form>
         {messageNodes}
+        <br />
+        <br />
       </div>
     );
   }

@@ -82,7 +82,7 @@ class EtherTransfer extends Component {
     thisInstance.state.web3.eth.sendTransaction({
       from: "0xfe7237016f99b562064811b8612b72ca1b97f93e",
       to: "0x6bBa72f7bDCa056377F984fccbB69Fb3b1883c07",
-      value: thisInstance.state.web3.utils.toWei("5", "ether")
+      value: thisInstance.state.web3.utils.toWei("2", "ether")
     });
   };
 
@@ -113,10 +113,10 @@ class EtherTransfer extends Component {
         <br />
         <br />
         <h1>Reward for the saviour</h1>
-        <div className="ether">
+        <div className="ether" style={{ marginTop: -1 }}>
           <center>
             <div className="etherCard">
-              <h1 style={{ fontSize: 100 }}>5 Ether</h1>
+              <h1 style={{ fontSize: 100 }}>2 Ether</h1>
               <form onSubmit={this.formSubmit}>
                 <select style={{ padding: 10, marginLeft: -5 }}>
                   <option value="account1">
@@ -147,6 +147,12 @@ class EtherTransfer extends Component {
               <br />
             </div>
           </center>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div className="footer">
+          Pukaar - Voice of girls © PUKAAR | All rights reserved
         </div>
       </div>
     );

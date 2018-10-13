@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "720745713861",
+    "firebase_url": "https://pukaar-9478a.firebaseio.com",
+    "project_id": "pukaar-9478a",
+    "storage_bucket": "pukaar-9478a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720745713861:android:51dc605215b734c5",
+        "android_client_info": {
+          "package_name": "com.akshat.pukaar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720745713861-oj0os5fa90bc68nfe12ufi8su2vb41ns.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.akshat.pukaar",
+            "certificate_hash": "c3bf7f7c191474a9566e126430f31bfa2a213095"
+          }
+        },
+        {
+          "client_id": "720745713861-82lg66qnc74b68jekm5ro2ei51njr3q5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY1UbuWFCRisiNbD_hIjhkKi-J3xv69Ss"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720745713861-82lg66qnc74b68jekm5ro2ei51njr3q5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -14,26 +14,22 @@ export default class Maps extends Component {
       zoom: 13,
       messages: []
     };
-  }
-
-  componentDidMount() {
-    console.log(this.props.loc);
     var mymap = Leaflet.map("mapid", {
-      center: [30.749521, 76.758864],
+      center: [this.props.loc[0]["lat"], this.props.loc[0]["lon"]],
       zoom: 14
     });
     Leaflet.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mymap);
-    Leaflet.marker([30.749521, 76.758864])
+    Leaflet.marker([this.props.loc[0]["lat"], this.props.loc[0]["lon"]])
       .addTo(mymap)
       .bindPopup("Home")
       .openPopup();
     Leaflet.Routing.control({
       waypoints: [
-        Leaflet.latLng(30.749521, 76.758864),
-        Leaflet.latLng(30.749286, 76.7662681)
+        Leaflet.latLng(this.props.loc[0]["lat"], this.props.loc[0]["lon"]),
+        Leaflet.latLng(this.props.loc[0]["lat"], this.props.loc[0]["lon"])
       ],
       routeWhileDragging: true
     })
@@ -49,12 +45,19 @@ export default class Maps extends Component {
         );
       })
       .addTo(mymap);
-    var circle = Leaflet.circle([30.749521, 76.758864], {
-      color: "red",
-      fillColor: "#f03",
-      fillOpacity: 0.5,
-      radius: 150
-    }).addTo(mymap);
+    var circle = Leaflet.circle(
+      [this.props.loc[0]["lat"], this.props.loc[0]["lon"]],
+      {
+        color: "red",
+        fillColor: "#f03",
+        fillOpacity: 0.5,
+        radius: 150
+      }
+    ).addTo(mymap);
+  }
+
+  componentDidMount() {
+    console.log(this.props.loc);
   }
 
   render() {

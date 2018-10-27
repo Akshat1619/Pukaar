@@ -13,7 +13,7 @@ class Scrape:
         message = ""
 
         firebasefetch = firebase.FirebaseApplication(
-            'https://pukaar-9478a.firebaseio.com/', None)
+            'https://react-da13f.firebaseio.com/', None)
         searchTerm = firebasefetch.get('/messages', None)
         for t in searchTerm:
             a = t
@@ -27,7 +27,7 @@ class Scrape:
 
         fh = open("save.txt", "w")
         firebaseObject = firebase.FirebaseApplication(
-            'https://pukaar-9478a.firebaseio.com/', None)
+            'https://react-da13f.firebaseio.com/', None)
         for x in range(0, 10):
             b = page_content.find_all('div', attrs={"class": "content"})[
                 x].find('p')

@@ -33,12 +33,12 @@ class StartPage extends Component {
             <div className="col-md-4 row">
               <div className="card-purple">Maps</div>
               <div className="card-white">
-                As soon as someone feels threat, they would use our pukaar app
-                for sending SOS message, their location will be plotted on the
-                web app map and this location can be seen by all the pukaar
-                users so anyone can help that girl. It also shows the number of
-                routes along with the best possible route from her current
-                location to her home.
+                We have a map feature in our web app.As soon as someone feels
+                threat, they would use our pukaar app for sending SOS message,
+                their location will be plotted on the web app map and this
+                location can be seen by all the pukaar users so anyone can help
+                that girl. It also shows the number of routes along with the
+                best possible route from her current location to her home.
               </div>
             </div>
 
